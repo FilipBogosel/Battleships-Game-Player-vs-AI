@@ -29,14 +29,15 @@ pip install texttable
 python start.py
 ```
 # Board Demo
+```
 Your Board            Computer's Board
 +---+---+---+        +---+---+---+
 | S | S | ~ |        | ~ | ~ | ~ |
 | X | 🌊 | ~ |        | 🌊 | ~ | ~ |
 | ~ | ~ | ~ |        | ~ | ~ | 🔥 |
 +---+---+---+        +---+---+---+
-
-# Playing ssample
+```
+# Playing sample
 Enter your shot coordinates (x y): 2 2
 💥 Direct hit! Computer's ship damaged!
 

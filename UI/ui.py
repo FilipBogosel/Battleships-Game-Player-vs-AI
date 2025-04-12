@@ -63,13 +63,25 @@ class UI:
             if self.game.current_turn == "human":
                 x, y = self.get_human_shot()
             else:
+                print("Computer's turn...")
                 if self.game.last_successful_shot_adiacents:
                     x, y = self.game.last_successful_shot_adiacents.pop()
-                    while not self.game.computer_board.is_valid_position([(x, y)]):
+                    # Check if the shot is valid (not already taken)
+                    while not (0 <= x < 7 and 0 <= y < 7) or self.game.human_board.grid[x][y] in ["X", "O"]:
+                        if not self.game.last_successful_shot_adiacents:
+                            # If we run out of adjacent positions, generate random coordinates
+                            x, y = random.randint(0, 6), random.randint(0, 6)
+                            while self.game.human_board.grid[x][y] in ["X", "O"]:
+                                x, y = random.randint(0, 6), random.randint(0, 6)
+                            break
                         x, y = self.game.last_successful_shot_adiacents.pop()
                 else:
-                    while not self.game.computer_board.is_valid_position([(x, y)]):
+                    # Initialize with random coordinates
+                    x, y = random.randint(0, 6), random.randint(0, 6)
+                    # Make sure we don't shoot at the same place twice
+                    while self.game.human_board.grid[x][y] in ["X", "O"]:
                         x, y = random.randint(0, 6), random.randint(0, 6)
+                print(f"Computer shoots at: {x}, {y}")
 
             self.game.take_turn(x, y)
 

@@ -45,7 +45,10 @@ Computer attacks (3,4)
 🌊 Miss! Their shot lands in water...
 
 ## Demo GUI:
+# Ships placement:
 ![image](https://github.com/user-attachments/assets/90cee4f0-e945-402d-a218-a6923dd13a78)
+# Gameplay:
+![Screenshot 2025-04-13 002911](https://github.com/user-attachments/assets/3836cc59-c956-4298-9ae3-5727be4132cc)
 
 
 # 🛠️ Dev Features
